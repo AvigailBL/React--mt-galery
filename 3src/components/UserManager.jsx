@@ -7,8 +7,7 @@ function UserManager(){
     return<>
     <p>ניהול משתמשים</p>
     <ul>
-    { users && users.map(u=> <li key={u.id}>{u.name} | {u.email} | {u.rool}</li>)}
-
+   { users&& users.map(u=> <li>{u.name} |{u.email}</li>)}
 
     </ul>
     </>

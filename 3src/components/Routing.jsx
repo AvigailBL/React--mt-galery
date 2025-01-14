@@ -10,7 +10,7 @@ import Resister_LodIn from './Resister_LodIn';
 import UserManager from './UserManager';
 
 
-export const Routing = ({ products, addCart, myCart, lessFromCart,calculateSum }) => {
+export const Routing = ({ products, addCart, myCart, lessFromCart }) => {
     return (
         <Routes>
             <Route path="/Home" element={<Home />} />
@@ -22,7 +22,7 @@ export const Routing = ({ products, addCart, myCart, lessFromCart,calculateSum }
             <Route path="/Resister_LodIn" element={<Resister_LodIn/>} />
             <Route path="/UserManager" element={<UserManager/>} />
 
-            <Route path="ShoppingBasket" element={<ShoppingBasket myCart={myCart} lessFromCart={lessFromCart} calculateSum={calculateSum}/>} />
+            <Route path="ShoppingBasket" element={<ShoppingBasket myCart={myCart} lessFromCart={lessFromCart}/>} />
 
         </Routes>
     );

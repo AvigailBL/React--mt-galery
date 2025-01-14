@@ -1,4 +1,3 @@
-
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";  // ייבוא useNavigate
 import MyContext from "../contexst/context";
@@ -10,27 +9,10 @@ function Resister_LodIn() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState({
-        name: false,
-        email: false,
-        password: false
-    });
 
     const handleRegister = () => {
-        // אתחול שגיאות
-        setError({ name: false, email: false, password: false });
-
-        // בדיקת תקינות אם השדות לא ריקים
-        if (!name || !email || !password) {
-            setError({
-                name: !name,
-                email: !email,
-                password: !password
-            });
-            return;  // אם אחד השדות ריק, לא נבצע את ההרשמה
-        }
-
-        const newUser = { name, email, password };
+        const newUser = {name,email, password,  // אתה יכול לשנות את זה לפי הצורך
+        };
         
         register(newUser);  // הרשמה
 
@@ -46,7 +28,6 @@ function Resister_LodIn() {
                 type="text" 
                 value={name} 
                 onChange={(e) => setName(e.target.value)} 
-                style={{ borderColor: error.name ? 'red' : '' }} // הדגשה אם יש שגיאה
             />
 
             <p>:הכנס כתובת אמייל</p>
@@ -54,7 +35,6 @@ function Resister_LodIn() {
                 type="email" 
                 value={email} 
                 onChange={(e) => setEmail(e.target.value)} 
-                style={{ borderColor: error.email ? 'red' : '' }} // הדגשה אם יש שגיאה
             />
 
             <p>הכנס סיסמה</p>
@@ -62,7 +42,6 @@ function Resister_LodIn() {
                 type="password" 
                 value={password} 
                 onChange={(e) => setPassword(e.target.value)} 
-                style={{ borderColor: error.password ? 'red' : '' }} // הדגשה אם יש שגיאה
             />
 
             <br />
@@ -72,4 +51,3 @@ function Resister_LodIn() {
 }
 
 export default Resister_LodIn;
-

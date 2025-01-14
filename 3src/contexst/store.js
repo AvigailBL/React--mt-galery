@@ -4,12 +4,11 @@ import { useState, } from "react"
 export const CreateStore = () => {
 
     const [users, setUsers] = useState([
-        { id: 1, name: "ruti", password: "1234", email: "123@r", role: "manager" },
-        { id: 2, name: "nava", password: "1111", email: "123@n", role: "manager" },
-        { id: 3, name: "tamar", password: "2222", email: "123@t", role: "user" },
-        { id: 4, name: "sara", password: "3333", email: "123@s", role: "user" }
+        { id: 1, name: "ruti", password: "1234", email: "123@r", rool: "manager" },
+        { id: 2, name: "nava", password: "1111", email: "123@n", rool: "manager" },
+        { id: 3, name: "tamar", password: "2222", email: "123@t", rool: "user" },
+        { id: 4, name: "sara", password: "3333", email: "123@s", rool: "user" }
     ]);
-    
     const [CurrentUser, setCurrentUser] = useState(null);
 
 
@@ -39,12 +38,7 @@ export const CreateStore = () => {
                 alert("!!התחברת בהצלחה")
             }
 
-        },
-        logout: () => {
-            setCurrentUser(null);
-            console.log("התנתקת בהצלחה");
-          }
-
+        }
 
     }
     return store;

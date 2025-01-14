@@ -1,4 +1,3 @@
-
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";  // ייבוא useNavigate
 import MyContext from "../contexst/context";
@@ -72,4 +71,3 @@ function Resister_LodIn() {
 }
 
 export default Resister_LodIn;
-

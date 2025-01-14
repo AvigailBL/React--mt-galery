@@ -8,9 +8,8 @@ return <>
 
 <h1>פרטי התמונה</h1>
 <p>{name}</p>
-{/* <img src={"/IMG/"+img}  /> */}
-<img src={`/IMG/${img}`}/>
-
+<img src={"/IMG/"+img}  />
+{/* <p>{img}</p> */}
 <p>{descibe}</p>
 <p>{price}</p>
 <p>{size}</p>

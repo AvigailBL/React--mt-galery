@@ -18,7 +18,7 @@ login(name,password)
 navigate("/home");  // הנתיב לדף הבית שלך (תעדכן את זה לפי הצורך)
 
 }
-return (<>
+return <>
 <p>{user==null?"התחבר לאתר":user.name+ "שלום ל"}</p>
 <h1>התחברות</h1>
 <form>
@@ -26,15 +26,14 @@ return (<>
  <input type="text" onChange={e=>{setName(e.target.value)}}></input>
   <p>:סיסמה</p>
   <input type="password" onChange={e=>{setPassword(e.target.value)}}></input>
+
+  
 </form>
-
 <button onClick={()=>{Login()}}>התחברות</button>
-
 <br></br>
-
 <Link to={"/Resister_LodIn"}>להרשמה</Link>
 
-  </>)
+  </>
 }
 
 
@@ -47,4 +46,3 @@ export default Connections;
 
 
 
- 
