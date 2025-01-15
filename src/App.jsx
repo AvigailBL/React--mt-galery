@@ -5,7 +5,7 @@ import { useState, useEffect, useContext } from "react"
 import MyContext, { Myprovider } from './contexst/context';
 import { CreateStore } from './contexst/store';
 // import { useNavigate } from "react-router-dom";  // ייבוא useNavigate
-import { headerStyles, footerStyles } from '../css/app';
+import { headerStyles, footerStyles } from './css/app1';
 
 
 function App() {
@@ -92,11 +92,6 @@ function App() {
     setCodeCounter((codeCounter) => codeCounter + 1); // עדכון המונה הרץ
   };
 
-
-
-
-
-
   //פונקצית הסרה
   const lessFromCart = (code) => {
 
@@ -107,9 +102,11 @@ function App() {
     setSum(calculateSum()); // עדכון הסכום עם כל שינוי בעגלה
   }, [myCart]);
 
-  const deleteProduct =(code)=>{
+  const deleteProduct = (code) => {
     const updatedItems = products.filter(products => products.code !== code);
     setproducts(updatedItems);
+  };
+  
 
   return (
 
@@ -154,5 +151,5 @@ function App() {
     </Myprovider>
   );
 }
-}
+
 export default App;

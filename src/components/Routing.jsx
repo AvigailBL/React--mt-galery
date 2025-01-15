@@ -10,7 +10,7 @@ import Resister_LodIn from './Resister_LodIn';
 import UserManager from './UserManager';
 
 
-export const Routing = ({ products, addCart, myCart, lessFromCart,calculateSum }) => {
+export const Routing = ({ products, addCart, myCart, lessFromCart,calculateSum ,deleteProduct}) => {
     return (
         <Routes>
             <Route path="/Home" element={<Home />} />
