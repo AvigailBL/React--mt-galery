@@ -1,11 +1,12 @@
 import './App.css';
-import Product from './components/Product';
 import { Routing } from './components/Routing';
 import { BrowserRouter, Link } from 'react-router-dom';
 import { useState, useEffect, useContext } from "react"
 import MyContext, { Myprovider } from './contexst/context';
 import { CreateStore } from './contexst/store';
 // import { useNavigate } from "react-router-dom";  // ייבוא useNavigate
+import { headerStyles, footerStyles } from '../css/app';
+
 
 function App() {
 
@@ -106,14 +107,16 @@ function App() {
     setSum(calculateSum()); // עדכון הסכום עם כל שינוי בעגלה
   }, [myCart]);
 
-
+  const deleteProduct =(code)=>{
+    const updatedItems = products.filter(products => products.code !== code);
+    setproducts(updatedItems);
 
   return (
 
     <Myprovider value={store}>
       <BrowserRouter>
         <div className="App">
-          <header>
+          <header style={headerStyles}>
             <h1> הגלרייה של לואיס</h1>
             < Link to="/Home"> הבית</Link>
             <Link to="/About">אודות </Link>
@@ -141,15 +144,15 @@ function App() {
           </header>
           <main>
             {/*שליחה לראוטר את הערכים שנצטרך להשתמש בהם בכל הקומפוננטות*/}
-            <Routing products={products} addCart={addCart} myCart={myCart} lessFromCart={lessFromCart} calculateSum={calculateSum} />
+            <Routing products={products} addCart={addCart} myCart={myCart} lessFromCart={lessFromCart} calculateSum={calculateSum}  deleteProduct={deleteProduct}/>
 
 
           </main>
-          <footer >&copy;    AVIGAILBL   כל הזכויות שמורות</footer>
+          <footer style={footerStyles}>&copy;    AVIGAILBL   כל הזכויות שמורות</footer>
         </div>
       </BrowserRouter>
     </Myprovider>
   );
 }
-
+}
 export default App;

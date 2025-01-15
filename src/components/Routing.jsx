@@ -15,7 +15,7 @@ export const Routing = ({ products, addCart, myCart, lessFromCart,calculateSum }
         <Routes>
             <Route path="/Home" element={<Home />} />
             <Route path="/About" element={<About />} />
-            <Route path="/Product" element={<Product key={products.code} products={products} addCart={addCart} />} />
+            <Route path="/Product" element={<Product key={products.code} products={products} addCart={addCart} deleteProduct={deleteProduct} />} />
             <Route path="/ProductDBiger/:name/:descibe/:size/:price/:img" element={<ProductDBiger />} />
             <Route path="/ContactUs" element={<ContactUs />} />
             <Route path="/Connections" element={<Connections/>} />

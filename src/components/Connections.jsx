@@ -1,50 +1,70 @@
-import {  useContext, useState } from "react";
+import { useContext, useState } from "react";
 import MyContext from "../contexst/context";
-import {   Link } from 'react-router-dom';
-import { useNavigate } from "react-router-dom";  // ייבוא useNavigate
+import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import '../css/connections.css';
 
+function Connections() {
+    const { login } = useContext(MyContext);
+    const user = useContext(MyContext).CurrentUser;
+    const navigate = useNavigate();
+    const [name, setName] = useState("");
+    const [password, setPassword] = useState("");
 
-function Connections(){
+    const Login = () => {
+        login(name, password);
+        navigate("/home");
+    }
 
-const {  login } = useContext(MyContext); // שימוש ב-context בצורה מסודרת
-const user=useContext(MyContext).CurrentUser
-const navigate = useNavigate();  // יצירת פונקציה לנווט לדף
+    return (
+        <div className="gallery-login">
+            <div className="art-frame">
+                <div className="content-wrapper">
+                    <h1 className="gallery-name">הגלריה של לואיס</h1>
+                    
+                    <div className="welcome-text">
+                        {user == null ? 
+                            <span className="fade-in">ברוכים הבאים לעולם האומנות של לואיס</span> : 
+                            <span className="fade-in">{`${user.name} שמחים לראותך`}</span>
+                        }
+                    </div>
+                    
+                    <form className="login-form">
+                        <div className="form-field">
+                            <input 
+                                type="text" 
+                                className="styled-input"
+                                onChange={e => setName(e.target.value)}
+                                placeholder="שם משתמש"
+                            />
+                        </div>
 
-const [name, setName] = useState("");
-const [password, setPassword] = useState("");
+                        <div className="form-field">
+                            <input 
+                                type="password" 
+                                className="styled-input"
+                                onChange={e => setPassword(e.target.value)}
+                                placeholder="סיסמה"
+                            />
+                        </div>
 
-const Login=()=>{
-login(name,password)
-navigate("/home");  // הנתיב לדף הבית שלך (תעדכן את זה לפי הצורך)
+                        <button 
+                            type="button" 
+                            className="enter-btn"
+                            onClick={Login}
+                        >
+                            כניסה לגלריה
+                        </button>
+                    </form>
 
+                    <div className="register-option">
+                        <Link to="/Resister_LodIn" className="register-btn">
+להרשמה                        </Link>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 }
-return (<>
-<p>{user==null?"התחבר לאתר":user.name+ "שלום ל"}</p>
-<h1>התחברות</h1>
-<form>
-<p>:שם המשתמש</p>
- <input type="text" onChange={e=>{setName(e.target.value)}}></input>
-  <p>:סיסמה</p>
-  <input type="password" onChange={e=>{setPassword(e.target.value)}}></input>
-</form>
-
-<button onClick={()=>{Login()}}>התחברות</button>
-
-<br></br>
-
-<Link to={"/Resister_LodIn"}>להרשמה</Link>
-
-  </>)
-}
-
-
-
-
 
 export default Connections;
-
- 
-
-
-
- 

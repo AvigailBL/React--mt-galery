@@ -1,0 +1,142 @@
+.gallery-login {
+    min-height: 100vh;
+    background: linear-gradient(45deg, #f5f5f5, #faf0f0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.art-frame {
+    width: 90%;
+    max-width: 480px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(114, 28, 36, 0.15);
+    padding: 3rem 2rem;
+    animation: fadeScale 0.8s ease-out;
+}
+
+.gallery-name {
+    color: #721c24;
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: 'Playfair Display', serif;
+    animation: titleFloat 3s ease-in-out infinite;
+}
+
+.welcome-text {
+    color: #4a4a4a;
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-field {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.styled-input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    direction: rtl;
+}
+
+.styled-input:focus {
+    border-color: #721c24;
+    box-shadow: 0 0 0 2px rgba(114, 28, 36, 0.1);
+    transform: translateY(-2px);
+}
+  .enter-btn {
+      padding: 1rem;
+      font-size: 1.2rem;
+      color: #fff;
+      background: linear-gradient(135deg, #8b4367, #9b6b7d);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+  }
+
+  .enter-btn:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, #9b6b7d, #8b4367);
+      box-shadow: 0 5px 15px rgba(139, 67, 103, 0.3);
+  }
+.register-option {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.register-btn {
+    color: #721c24;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.register-btn::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background: #721c24;
+    transition: width 0.3s ease;
+}
+
+.register-btn:hover::after {
+    width: 100%;
+}
+
+@keyframes fadeScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes titleFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .art-frame {
+        width: 95%;
+        padding: 2rem 1.5rem;
+    }
+    
+    .gallery-name {
+        font-size: 2.2rem;
+    }
+}

@@ -1,29 +1,16 @@
- function Home() {
-   
-   
+import '../css/home.css';
 
-    return(
-    <>
-    <div>
-     <h1>Home</h1>
-     <img src={"/IMG/Home.png"}  />
-     </div>
-    <main>
-        <br></br>
-    <img src={"/IMG/home5.png"}  />
-
-     {/* <img src={"/IMG/home1.png"}  />
-     <img src={"/IMG/home2.png"}  />
-     <img src={"/IMG/home3.png"}  /> */}
-     </main>
-    </>
-    )
+function Home() {
+    return (
+        <div className="home-container">
+            <div className="hero-section">
+                <img src="/IMG/Home.png" className="hero-image" alt="Gallery Hero" />
+            </div>
+            <div className="secondary-section">
+                <img src="/IMG/home5.png" className="secondary-image" alt="Gallery Art" />
+            </div>
+        </div>
+    );
 }
+
 export default Home;
-
-
-
-
-
-
-
